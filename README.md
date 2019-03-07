@@ -47,5 +47,5 @@ Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktu
 ### 03.1 Vagrant
 Erste Berührungspunkte mit Vagrant während des aufsetzens der benötigten Toolumgebung für Modul 300.
 
-**Befehle**
+**Befehle**  
 *vagrant init* - Erstellt ein Vagrantfile im aktuellen Verzeichnis, in meinem Fall direkt im LocalRepository. Dies ermöglicht mir bei Visual Studio Code unkompliziert zwischen Doku und Vagrantfile zu switchen.
