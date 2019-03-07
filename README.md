@@ -1,36 +1,45 @@
 # Modul 300 – LB1
 
 ## Inhaltsverzeichnis
-* 01 - [Verwendete Tools](#Verwendete-Tools)
-* 02 - [Wissenstand](#Wissenstand)
-* 03 - [Lernschritte](#Lernschritte)
+- [Modul 300 – LB1](#modul-300-%E2%80%93-lb1)
+  - [Inhaltsverzeichnis](#inhaltsverzeichnis)
+  - [01 - Verwendete Tools](#01---verwendete-tools)
+  - [02 - Wissenstand](#02---wissenstand)
+    - [02.1 - Linux](#021---linux)
+    - [02.2 - Virtualisierung](#022---virtualisierung)
+    - [02.3 - Vagrant](#023---vagrant)
+    - [02.4 - Versionsverwaltung](#024---versionsverwaltung)
+    - [02.5 Mark Down](#025-mark-down)
+    - [02.6 Systemsicherheit](#026-systemsicherheit)
+  - [Lernschritte](#lernschritte)
+    - [Vagrant](#vagrant)
 
 
-## Verwendete Tools
+## 01 - Verwendete Tools
 * Oracle VirtualBox 6.0
 * Vagrant
 * Visual Studio Code
 * Git-Client (inkl. SSH-Key)
   
-## Wissenstand
+## 02 - Wissenstand
 
-### Linux
+### 02.1 - Linux
 Linux Grundkenntnisse sind vorhanden, war jedoch nie meine primäre Arbeitsumgebung.
 
-### Virtualisierung
+### 02.2 - Virtualisierung
 Erfahrung mit VMWare Workstation Player sowie VirtualBox.
 
-### Vagrant
+### 02.3 - Vagrant
 Keine Vorkenntnisse vorhanden.
 
-### Versionsverwaltung
+### 02.4 - Versionsverwaltung
 Cloud-spezifische Erfahrung mit Versionverwaltung vorhanden: Dokumente in Google Drive jeweils so versionisiert, dass alte Versionen jederzeit wiederhergestellt werden konnten.
 Keine Vorkenntnisse mit Git vorhanden.
 
-### Mark Down
+### 02.5 Mark Down
 Keine Vorkenntnisse mit Mark Down vorhanden.
 
-### Systemsicherheit
+### 02.6 Systemsicherheit
 Erfahrung mit der sicheren Aufbewahrung von sensitiven Daten, sicheres lagern von Passwörtern, Firewall, etc.
 
 ## Lernschritte
