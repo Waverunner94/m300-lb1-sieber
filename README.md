@@ -51,5 +51,5 @@ Erste Berührungspunkte mit Vagrant während des aufsetzens der benötigten Tool
 *vagrant init* - Erstellt ein Vagrantfile im aktuellen Verzeichnis, in meinem Fall direkt im LocalRepository. Dies ermöglicht mir bei Visual Studio Code unkompliziert zwischen Doku und Vagrantfile zu switchen.  
 
 **Einrichten bestehender VM aus Vagrant-Cloud**  
-1. Gewünschtes OS von *https://app.vagrantup.com/boxes/search?provider=virtualbox* auswählen. Ich habe mich für Ubuntu 16.04 LTS(https://app.vagrantup.com/ubuntu/boxes/xenial64) entschieden.
+1. Gewünschtes OS von aus der [Cloud](https://app.vagrantup.com/boxes/search?provider=virtualbox) wählen. Ich habe mich für Ubuntu 16.04 LTS(#https://app.vagrantup.com/ubuntu/boxes/xenial64) entschieden.
 2. 
