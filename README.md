@@ -12,7 +12,6 @@
     - [02.5 Mark Down](#025-mark-down)
     - [02.6 Systemsicherheit](#026-systemsicherheit)
   - [03 Lernschritte](#03-lernschritte)
-    - [03.1 Vagrant](#031-vagrant)
 
 
 ## 01 - Verwendete Tools
@@ -44,12 +43,11 @@ Erfahrung mit der sicheren Aufbewahrung von sensitiven Daten, sicheres lagern vo
 
 ## 03 Lernschritte
 Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktualisieren werde.
-### 03.1 Vagrant
-Erste Berührungspunkte mit Vagrant während des aufsetzens der benötigten Toolumgebung für Modul 300.
 
-**Befehle**  
-*vagrant init* - Erstellt ein Vagrantfile im aktuellen Verzeichnis, in meinem Fall direkt im LocalRepository. Dies ermöglicht mir bei Visual Studio Code unkompliziert zwischen Doku und Vagrantfile zu switchen.  
+**Vagrant-Befehle**  
+*vagrant init* - Erstellt ein Vagrantfile im aktuellen Verzeichnis.   
 
-**Einrichten bestehender VM aus Vagrant-Cloud**  
-1. Gewünschtes OS von der [Vagrant-Cloud](https://app.vagrantup.com/boxes/search?provider=virtualbox) wählen, zum Beispiel [Ubuntu 16.04 LTS](https://app.vagrantup.com/ubuntu/boxes/xenial64).
-2. 
+**Einrichten eines Webservers mit bestehender VM aus Vagrant-Cloud** 
+1. Mit Befehl *vagrant init* ein Vagrantfile im gewünschten Verzeichnis erzeugen. Ich habe dies direkt im LocalRepository gemacht. Dies ermöglicht mir bei Visual Studio Code unkompliziert zwischen Doku und Vagrantfile zu switchen.  
+2. Gewünschtes OS von der [Vagrant-Cloud](https://app.vagrantup.com/boxes/search?provider=virtualbox) wählen, zum Beispiel [Ubuntu 16.04 LTS](https://app.vagrantup.com/ubuntu/boxes/xenial64).
+3. 
