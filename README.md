@@ -11,8 +11,8 @@
     - [02.4 - Versionsverwaltung](#024---versionsverwaltung)
     - [02.5 Mark Down](#025-mark-down)
     - [02.6 Systemsicherheit](#026-systemsicherheit)
-  - [Lernschritte](#lernschritte)
-    - [Vagrant](#vagrant)
+  - [03 Lernschritte](#03-lernschritte)
+    - [03.1 Vagrant](#031-vagrant)
 
 
 ## 01 - Verwendete Tools
@@ -42,7 +42,7 @@ Keine Vorkenntnisse mit Mark Down vorhanden.
 ### 02.6 Systemsicherheit
 Erfahrung mit der sicheren Aufbewahrung von sensitiven Daten, sicheres lagern von Passwörtern, Firewall, etc.
 
-## Lernschritte
+## 03 Lernschritte
 Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktualisieren werde.
-### Vagrant
+### 03.1 Vagrant
 Erste Berührungspunkte mit Vagrant während des aufsetzens der benötigten Toolumgebung für Modul 300.
