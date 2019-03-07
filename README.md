@@ -1,9 +1,9 @@
 # Modul 300 – LB1
 
 ## Inhaltsverzeichnis
-1. [Verwendete Tools](#Verwendete-Tools)
-2. [Wissenstand](#Wissenstand)
-3. [Lernschritte](#Lernschritte)
+* 01 - [Verwendete Tools](#Verwendete-Tools)
+* 02 - [Wissenstand](#Wissenstand)
+* 03 - [Lernschritte](#Lernschritte)
 
 
 ## Verwendete Tools
