@@ -1,5 +1,6 @@
 Vagrant.configure(2) do |config|
-  config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "velocity42/xenial64"
+  config.vm.box_version = "1.1.0"
   config.vm.network "forwarded_port", guest:80, host:8080, auto_correct: true
   config.vm.synced_folder ".", "/var/www/html"  
 config.vm.provider "vmware_desktop" do |vb|
