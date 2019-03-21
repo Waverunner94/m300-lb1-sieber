@@ -73,17 +73,16 @@ Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktu
 **Erzeugen des Webservers im Vagrantfile** 
 1. Mit dem Befehl *vagrant init* ein Vagrantfile im gewünschten Verzeichnis erzeugen. Ich habe dies direkt im LocalRepository (C:\Users\Severin Sieber\Desktop\m300-lb1-sieber) gemacht. Dies ermöglicht mir bei Visual Studio Code unkompliziert zwischen Doku und Vagrantfile zu switchen.  
 2. Folgende Zeilen werden in das Vagrantfile geschrieben:  
-   ```
-   config.vm.define "web" do |web|
-		web.vm.box = "ubuntu/xenial64"
-  ```  
-  Der Webserver wird auf Ubuntu/Xenial64 aufgesetzt, dies wurde aus der Vagrant-Cloud kopiert.  
-		web.vm.hostname = "web"
-		web.vm.network "private_network", ip: "192.168.69.50"
-		web.vm.provider "virtualbox" do |vb|
+   *Vagrant.configure("2") do |config|
+	config.vm.define "proxy" do |proxy|
+		proxy.vm.box = "ubuntu/xenial64"
+		proxy.vm.hostname = "proxy"
+		proxy.vm.network "private_network", ip: "192.168.69.49"
+		proxy.vm.network "forwarded_port", guest:80, host:5000, auto_correct: true
+		proxy.vm.provider "virtualbox" do |vb|
 			vb.memory = "512"  
 		end
-		web.vm.synced_folder "src", "/var/www/html"  
-		web.vm.provision "shell", path: "server.sh"
-  end
-  ```
+		proxy.vm.synced_folder "proxy", "/vagrant"  
+		proxy.vm.provision "shell", path: "proxy.sh"
+  end*  
+  
