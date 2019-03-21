@@ -101,6 +101,5 @@ Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktu
 		end
 		db.vm.provision "shell", path: "db.sh"
   end
-
-  ```
   
+  ```
