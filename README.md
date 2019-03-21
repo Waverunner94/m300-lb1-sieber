@@ -83,9 +83,24 @@ Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktu
 			vb.memory = "512"  
 		end
 		web.vm.synced_folder "src", "/var/www/html"  
-    *In diesem Ordner wird die index.html erstellt*
 		web.vm.provision "shell", path: "server.sh"
   end
 
   ```
-   
+3. Den Ordner "src" im Verzeichnis erstellen. Darin wird die index.html und index.php erzeugt.  
+  
+**Erzeugen des Datenbankservers im Vagrantfile**  
+1. Folgende Zeilen werden in das Vagrantfile unterhalb der letzten geschrieben:
+   ```
+   config.vm.define "db" do |db|
+		db.vm.box = "ubuntu/xenial64"
+		db.vm.hostname = "db"
+		db.vm.network "private_network", ip: "192.168.69.51"
+		db.vm.provider "virtualbox" do |vb|
+			vb.memory = "1024"  
+		end
+		db.vm.provision "shell", path: "db.sh"
+  end
+
+  ```
+  
