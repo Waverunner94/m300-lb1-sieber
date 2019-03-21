@@ -86,5 +86,6 @@ Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktu
 		proxy.vm.synced_folder "proxy", "/vagrant"  
 		proxy.vm.provision "shell", path: "proxy.sh"
   end
+  
   ```
 3. Test
