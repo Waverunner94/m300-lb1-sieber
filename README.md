@@ -78,7 +78,6 @@ Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktu
 		web.vm.box = "ubuntu/xenial64"
   ```  
   Der Webserver wird auf Ubuntu/Xenial64 aufgesetzt, dies wurde aus der Vagrant-Cloud kopiert.  
-  ```
 		web.vm.hostname = "web"
 		web.vm.network "private_network", ip: "192.168.69.50"
 		web.vm.provider "virtualbox" do |vb|
