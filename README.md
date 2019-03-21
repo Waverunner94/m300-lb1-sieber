@@ -147,4 +147,18 @@ sudo service mysql restart
 ```
 
 **Erzeugen des Proxys im Vagrantfile**  
-  
+1. Folgende Zeilen werden in das Vagrantfile geschrieben:
+```
+   config.vm.define "proxy" do |proxy|
+		proxy.vm.box = "ubuntu/xenial64"
+		proxy.vm.hostname = "proxy"
+		proxy.vm.network "private_network", ip: "192.168.69.49"
+		proxy.vm.network "forwarded_port", guest:80, host:5000, auto_correct: true
+		proxy.vm.provider "virtualbox" do |vb|
+			vb.memory = "512"  
+		end
+		proxy.vm.synced_folder "proxy", "/vagrant"  
+		proxy.vm.provision "shell", path: "proxy.sh"
+  end
+```
+2. TEST
