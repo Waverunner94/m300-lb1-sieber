@@ -75,17 +75,17 @@ Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktu
 2. Folgende Zeilen werden in das Vagrantfile geschrieben:  
   ```
    Vagrant.configure("2") do |config|
-	config.vm.define "proxy" do |proxy|
-		proxy.vm.box = "ubuntu/xenial64"
-		proxy.vm.hostname = "proxy"
-		proxy.vm.network "private_network", ip: "192.168.69.49"
-		proxy.vm.network "forwarded_port", guest:80, host:5000, auto_correct: true
-		proxy.vm.provider "virtualbox" do |vb|
+	config.vm.define "web" do |web|
+		web.vm.box = "ubuntu/xenial64"
+		web.vm.hostname = "web"
+		web.vm.network "private_network", ip: "192.168.69.50"
+		web.vm.provider "virtualbox" do |vb|
 			vb.memory = "512"  
 		end
-		proxy.vm.synced_folder "proxy", "/vagrant"  
-		proxy.vm.provision "shell", path: "proxy.sh"
+		web.vm.synced_folder "src", "/var/www/html"  
+    *In diesem Ordner wird die index.html erstellt*
+		web.vm.provision "shell", path: "server.sh"
   end
 
   ```
-3. Test
+   
