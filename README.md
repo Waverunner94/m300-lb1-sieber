@@ -11,7 +11,7 @@
     - [02.4 - Versionsverwaltung](#024---versionsverwaltung)
     - [02.5 Mark Down](#025-mark-down)
     - [02.6 Systemsicherheit](#026-systemsicherheit)
-  - [03 Lernschritte LB1](#03-lernschritte-lb1)
+  - [03 Lernschritte und Durchführung LB1](#03-lernschritte-und-durchf%C3%BChrung-lb1)
 
 
 ## 01 - Verwendete Tools
@@ -41,7 +41,7 @@ Keine Vorkenntnisse mit Mark Down vorhanden.
 ### 02.6 Systemsicherheit
 Erfahrung mit der sicheren Aufbewahrung von sensitiven Daten, sicheres lagern von Passwörtern, Firewall, etc.
 
-## 03 Lernschritte LB1
+## 03 Lernschritte und Durchführung LB1
 Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktualisieren werde.
 
 **Netzwerkplan** 
@@ -105,8 +105,6 @@ a2enmod proxy
 a2enmod proxy_http
 service apache2 restart
 ```
-
-**
 
 **Erzeugen des Webservers im Vagrantfile** 
 1. Mit dem Befehl *vagrant init* ein Vagrantfile im gewünschten Verzeichnis erzeugen. Ich habe dies direkt im LocalRepository (C:\Users\Severin Sieber\Desktop\m300-lb1-sieber) gemacht. Dies ermöglicht mir bei Visual Studio Code unkompliziert zwischen Doku und Vagrantfile zu switchen.  
@@ -183,3 +181,5 @@ mysql -uroot -psecret_password <<%EOF%
 
 sudo service mysql restart
 ```
+
+**Erzeugen des Webservers im Vagrantfile**
