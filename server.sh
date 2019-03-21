@@ -5,7 +5,7 @@
 
 ufw enable
 ufw allow from 192.168.69.49 to any http
-ufw allow from 192.168.40.1 to any port 22
+ufw allow from 192.168.69.1 to any port 22
 
 apt-get update -y
 apt-get install -y apache2
