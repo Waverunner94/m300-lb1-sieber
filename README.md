@@ -70,6 +70,20 @@ Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktu
 *vagrant halt*              - Stoppt alle laufenden VMs.  
 *vagrant destroy*           - Löscht alle vorhandenen VMs.  
 
-**Einrichten des Webservers mit bestehender VM aus Vagrant-Cloud** 
-1. Mit dem Befehl *vagrant init* ein Vagrantfile im gewünschten Verzeichnis erzeugen. Ich habe dies direkt im LocalRepository gemacht. Dies ermöglicht mir bei Visual Studio Code unkompliziert zwischen Doku und Vagrantfile zu switchen.  
-2. Gewünschtes OS von der [Vagrant-Cloud](https://app.vagrantup.com/boxes/search?provider=virtualbox) wählen, zum Beispiel [Ubuntu 16.04 LTS](https://app.vagrantup.com/ubuntu/boxes/xenial64).
+**Erzeugen des Webservers im Vagrantfile** 
+1. Mit dem Befehl *vagrant init* ein Vagrantfile im gewünschten Verzeichnis erzeugen. Ich habe dies direkt im LocalRepository (C:\Users\Severin Sieber\Desktop\m300-lb1-sieber) gemacht. Dies ermöglicht mir bei Visual Studio Code unkompliziert zwischen Doku und Vagrantfile zu switchen.  
+2. ```
+ Vagrant.configure("2") do |config|
+	config.vm.define "proxy" do |proxy|
+		proxy.vm.box = "ubuntu/xenial64"
+		proxy.vm.hostname = "proxy"
+		proxy.vm.network "private_network", ip: "192.168.69.49"
+		proxy.vm.network "forwarded_port", guest:80, host:5000, auto_correct: true
+		proxy.vm.provider "virtualbox" do |vb|
+			vb.memory = "512"  
+		end
+		proxy.vm.synced_folder "proxy", "/vagrant"  
+		proxy.vm.provision "shell", path: "proxy.sh"
+  end
+  ```  
+3. Test
