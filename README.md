@@ -64,7 +64,7 @@ Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktu
 **Vagrant-Befehle**  
 *vagrant init*              - Erstellt ein Vagrantfile im aktuellen Verzeichnis.  
 *vagrant up*                - Setzt die VMs basierend auf dem Vagrantfile auf.  
-*vagrant ssh "[vmname]"*    - Stellt eine sichere Verbindung mit der entsprechenden VM her.  
+*vagrant ssh [vmname]*    - Stellt eine sichere Verbindung mit der entsprechenden VM her.  
 *vagrant global-status*     - Zeigt alle bekannten vorhandenen Vagrant-Umgebungen an.  
 
 **Einrichten des Webservers mit bestehender VM aus Vagrant-Cloud** 
