@@ -69,6 +69,45 @@ Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktu
 *vagrant halt*              - Stoppt alle laufenden VMs.  
 *vagrant destroy*           - Löscht alle vorhandenen VMs.  
 
+**Erzeugen des Proxys im Vagrantfile**  
+1. Folgende Zeilen werden in das Vagrantfile geschrieben:
+```
+   config.vm.define "proxy" do |proxy|
+		proxy.vm.box = "ubuntu/xenial64"
+		proxy.vm.hostname = "proxy"
+		proxy.vm.network "private_network", ip: "192.168.69.49"
+		proxy.vm.network "forwarded_port", guest:80, host:5000, auto_correct: true
+		proxy.vm.provider "virtualbox" do |vb|
+			vb.memory = "512"  
+		end
+		proxy.vm.synced_folder "proxy", "/vagrant"  
+		proxy.vm.provision "shell", path: "proxy.sh"
+  end
+```
+2. Das File proxy.sh im Verzeichnis erzeugen und folgenden Inhalt einfügen:  
+```
+#!/bin/bash
+#
+#	Proxy installieren und konfigurieren
+#
+
+ufw enable
+ufw allow http
+ufw allow from 192.168.69.1 to any port 22
+
+apt-get update -y
+apt-get -y install apache2
+
+
+cp /vagrant/001-mysite.conf /etc/apache2/sites-available/
+a2ensite 001-mysite.conf
+a2enmod proxy
+a2enmod proxy_http
+service apache2 restart
+```
+
+**
+
 **Erzeugen des Webservers im Vagrantfile** 
 1. Mit dem Befehl *vagrant init* ein Vagrantfile im gewünschten Verzeichnis erzeugen. Ich habe dies direkt im LocalRepository (C:\Users\Severin Sieber\Desktop\m300-lb1-sieber) gemacht. Dies ermöglicht mir bei Visual Studio Code unkompliziert zwischen Doku und Vagrantfile zu switchen.  
 2. Folgende Zeilen werden in das Vagrantfile geschrieben:  
@@ -91,16 +130,16 @@ Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktu
 **Erzeugen des Datenbankservers im Vagrantfile**  
 1. Folgende Zeilen werden in das Vagrantfile unterhalb der letzten geschrieben:
   ```
-   config.vm.define "db" do |db|
-		db.vm.box = "ubuntu/xenial64"
-		db.vm.hostname = "db"
-		db.vm.network "private_network", ip: "192.168.69.51"
-		db.vm.provider "virtualbox" do |vb|
-			vb.memory = "1024"  
-		end
-		db.vm.provision "shell", path: "db.sh"
+    config.vm.define "db" do |db|
+	  	db.vm.box = "ubuntu/xenial64"
+	  	db.vm.hostname = "db"
+	  	db.vm.network "private_network", ip: "192.168.69.51"
+	  	db.vm.provider "virtualbox" do |vb|
+	  		vb.memory = "1024"  
+	  	end
+	  	db.vm.provision "shell", path: "db.sh"
+   end
   end
-
   ```
 2. Das File db.sh im Verzeichnis erzeugen und folgenden Inhalt einfügen:
   ```
@@ -144,42 +183,3 @@ mysql -uroot -psecret_password <<%EOF%
 
 sudo service mysql restart
 ```
-
-**Erzeugen des Proxys im Vagrantfile**  
-1. Folgende Zeilen werden in das Vagrantfile geschrieben:
-```
-   config.vm.define "proxy" do |proxy|
-		proxy.vm.box = "ubuntu/xenial64"
-		proxy.vm.hostname = "proxy"
-		proxy.vm.network "private_network", ip: "192.168.69.49"
-		proxy.vm.network "forwarded_port", guest:80, host:5000, auto_correct: true
-		proxy.vm.provider "virtualbox" do |vb|
-			vb.memory = "512"  
-		end
-		proxy.vm.synced_folder "proxy", "/vagrant"  
-		proxy.vm.provision "shell", path: "proxy.sh"
-  end
-```
-2. Das File proxy.sh im Verzeichnis erzeugen und folgenden Inhalt einfügen:  
-```
-#!/bin/bash
-#
-#	Proxy installieren und konfigurieren
-#
-
-ufw enable
-ufw allow http
-ufw allow from 192.168.69.1 to any port 22
-
-apt-get update -y
-apt-get -y install apache2
-
-
-cp /vagrant/001-mysite.conf /etc/apache2/sites-available/
-a2ensite 001-mysite.conf
-a2enmod proxy
-a2enmod proxy_http
-service apache2 restart
-```
-
-**
