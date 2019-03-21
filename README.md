@@ -45,6 +45,7 @@ Erfahrung mit der sicheren Aufbewahrung von sensitiven Daten, sicheres lagern vo
 Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktualisieren werde.
 
 **Netzwerkplan** 
+```
 +---------------------------------------------------------------+ 
 ! Notebook - Schulnetz 10.x.x.x und Privates Netz 192.168.69.1  ! 
 ! Port: 8080 (192.158.69.51:80)                                 ! 
@@ -59,6 +60,7 @@ Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktu
 !                                                               ! 
 +---------------------------------------------------------------+
 
+```
 **Vagrant-Befehle**  
 *vagrant init* - Erstellt ein Vagrantfile im aktuellen Verzeichnis.   
 
