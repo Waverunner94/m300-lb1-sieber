@@ -45,7 +45,6 @@ Vagrant.configure("2") do |config|
 			mysql -u root -p admin 
 				CREATE USER 'root'@'192.168.69.51' IDENTIFIED BY 'admin';
 				GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.69.51';
-				FLUSH PRIVILEGES;
 			
 			
 			# Restart fuer Konfigurationsaenderung
@@ -64,7 +63,7 @@ Vagrant.configure("2") do |config|
 			web.vm.provider "virtualbox" do |vb|
 				vb.memory = "512"
 			end
-		web.vm.synced_folder ".", "var/www/html"	
+		web.vm.synced_folder ".", "/var/www/html"	
 		web.vm.provision "shell", inline: <<-SHELL
 	    # Debug ON!!!
 			set -o xtrace	
