@@ -143,5 +143,7 @@ mysql -uroot -psecret_password <<%EOF%
 %EOF%
 
 
-sudo service mysql restart
-```
+sudo service mysql restart```
+
+**Erzeugen des Proxys im Vagrantfile**  
+  
