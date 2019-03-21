@@ -105,6 +105,11 @@ a2enmod proxy
 a2enmod proxy_http
 service apache2 restart
 ```
+3. Den Ordner "proxy" im Verzeichnis erzeugen und darin das File 001-mysite.conf erzeugen. In diesem File werden die IPs definiert welche über den Proxy erreicht werden können:
+```
+ProxyPass "/proxy" "http://192.168.69.50"
+ProxyPassReverse "/proxy" "http://192.168.69.50"
+```
 
 **Erzeugen des Webservers im Vagrantfile** 
 1. Mit dem Befehl *vagrant init* ein Vagrantfile im gewünschten Verzeichnis erzeugen. Ich habe dies direkt im LocalRepository (C:\Users\Severin Sieber\Desktop\m300-lb1-sieber) gemacht. Dies ermöglicht mir bei Visual Studio Code unkompliziert zwischen Doku und Vagrantfile zu switchen.  
