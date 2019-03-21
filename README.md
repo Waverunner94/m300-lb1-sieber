@@ -103,7 +103,7 @@ Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktu
   end
 
   ```
-2. Das File db.sh in Visual Studio Code erzeugen und folgenden Inhalt einfügen:
+2. Das File db.sh im Verzeichnis erzeugen und folgenden Inhalt einfügen:
   ```
   #!/bin/bash
 #
@@ -161,4 +161,25 @@ sudo service mysql restart
 		proxy.vm.provision "shell", path: "proxy.sh"
   end
 ```
-2. TEST
+2. Das File proxy.sh im Verzeichnis erzeugen und folgenden Inhalt einfügen:  
+```
+#!/bin/bash
+#
+#	Proxy installieren und konfigurieren
+#
+
+ufw enable
+ufw allow http
+ufw allow from 192.168.69.1 to any port 22
+
+apt-get update -y
+apt-get -y install apache2
+
+
+cp /vagrant/001-mysite.conf /etc/apache2/sites-available/
+a2ensite 001-mysite.conf
+a2enmod proxy
+a2enmod proxy_http
+service apache2 restart
+```
+3. Test
