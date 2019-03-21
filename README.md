@@ -62,10 +62,10 @@ Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktu
 
 ```
 **Vagrant-Befehle**  
-*vagrant init*              - Erstellt ein Vagrantfile im aktuellen Verzeichnis. 
-*vagrant up*                - Setzt die VMs basierend auf dem Vagrantfile auf.
-*vagrant ssh "[vmname]"*    - Stellt eine sichere Verbindung mit der entsprechenden VM her.
-*vagrant global-status*     - Zeigt alle bekannten vorhandenen Vagrant-Umgebungen an.
+*vagrant init*              - Erstellt ein Vagrantfile im aktuellen Verzeichnis.  
+*vagrant up*                - Setzt die VMs basierend auf dem Vagrantfile auf.  
+*vagrant ssh "[vmname]"*    - Stellt eine sichere Verbindung mit der entsprechenden VM her.  
+*vagrant global-status*     - Zeigt alle bekannten vorhandenen Vagrant-Umgebungen an.  
 
 **Einrichten des Webservers mit bestehender VM aus Vagrant-Cloud** 
 1. Mit dem Befehl *vagrant init* ein Vagrantfile im gewünschten Verzeichnis erzeugen. Ich habe dies direkt im LocalRepository gemacht. Dies ermöglicht mir bei Visual Studio Code unkompliziert zwischen Doku und Vagrantfile zu switchen.  
