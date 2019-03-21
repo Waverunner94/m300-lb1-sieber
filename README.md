@@ -46,13 +46,13 @@ Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktu
 
 **Netzwerkplan**
 +---------------------------------------------------------------+
-! Notebook - Schulnetz 10.x.x.x und Privates Netz 192.168.55.1  !                 
-! Port: 8080 (192.158.55.101:80)                                !	
+! Notebook - Schulnetz 10.x.x.x und Privates Netz 192.168.69.1  !                 
+! Port: 8080 (192.158.69.51:80)                                 !	
 !                                                               !	
 !    +--------------------+          +---------------------+    !
 !    ! Web Server         !          ! Datenbank Server    !    !       
 !    ! Host: web01        !          ! Host: db01          !    !
-!    ! IP: 192.168.55.101 ! <------> ! IP: 192.168.55.100  !    !
+!    ! IP: 192.168.69.51  ! <------> ! IP: 192.168.69.50   !    !
 !    ! Port: 80           !          ! Port 3306           !    !
 !    ! Nat: 8080          !          ! Nat: -              !    !
 !    +--------------------+          +---------------------+    !
