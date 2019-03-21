@@ -11,7 +11,7 @@
     - [02.4 - Versionsverwaltung](#024---versionsverwaltung)
     - [02.5 Mark Down](#025-mark-down)
     - [02.6 Systemsicherheit](#026-systemsicherheit)
-  - [03 Lernschritte](#03-lernschritte)
+  - [03 Lernschritte LB1](#03-lernschritte-lb1)
 
 
 ## 01 - Verwendete Tools
@@ -41,13 +41,28 @@ Keine Vorkenntnisse mit Mark Down vorhanden.
 ### 02.6 Systemsicherheit
 Erfahrung mit der sicheren Aufbewahrung von sensitiven Daten, sicheres lagern von Passwörtern, Firewall, etc.
 
-## 03 Lernschritte
+## 03 Lernschritte LB1
 Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktualisieren werde.
+
+**Netzwerkplan**
++---------------------------------------------------------------+
+! Notebook - Schulnetz 10.x.x.x und Privates Netz 192.168.55.1  !                 
+! Port: 8080 (192.158.55.101:80)                                !	
+!                                                               !	
+!    +--------------------+          +---------------------+    !
+!    ! Web Server         !          ! Datenbank Server    !    !       
+!    ! Host: web01        !          ! Host: db01          !    !
+!    ! IP: 192.168.55.101 ! <------> ! IP: 192.168.55.100  !    !
+!    ! Port: 80           !          ! Port 3306           !    !
+!    ! Nat: 8080          !          ! Nat: -              !    !
+!    +--------------------+          +---------------------+    !
+!                                                               !	
++---------------------------------------------------------------+
 
 **Vagrant-Befehle**  
 *vagrant init* - Erstellt ein Vagrantfile im aktuellen Verzeichnis.   
 
 **Einrichten eines Webservers mit bestehender VM aus Vagrant-Cloud** 
-1. Mit Befehl *vagrant init* ein Vagrantfile im gewünschten Verzeichnis erzeugen. Ich habe dies direkt im LocalRepository gemacht. Dies ermöglicht mir bei Visual Studio Code unkompliziert zwischen Doku und Vagrantfile zu switchen.  
+1. Mit dem Befehl *vagrant init* ein Vagrantfile im gewünschten Verzeichnis erzeugen. Ich habe dies direkt im LocalRepository gemacht. Dies ermöglicht mir bei Visual Studio Code unkompliziert zwischen Doku und Vagrantfile zu switchen.  
 2. Gewünschtes OS von der [Vagrant-Cloud](https://app.vagrantup.com/boxes/search?provider=virtualbox) wählen, zum Beispiel [Ubuntu 16.04 LTS](https://app.vagrantup.com/ubuntu/boxes/xenial64).
 3. 
