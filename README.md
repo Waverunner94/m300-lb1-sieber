@@ -63,7 +63,7 @@ Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktu
 ```
 **Vagrant-Befehle**  
 *vagrant init*              - Erstellt ein Vagrantfile im aktuellen Verzeichnis.  
-*vagrant up*                - Setzt die VMs basierend auf dem Vagrantfile auf.  
+*vagrant up*                - Setzt die VMs basierend auf dem Vagrantfile auf / startet die vorhandenen VMs.  
 *vagrant ssh [vmname]*      - Stellt eine sichere Verbindung mit der entsprechenden VM her.  
 *vagrant global-status*     - Zeigt alle bekannten vorhandenen Vagrant-Umgebungen an.  
 *vagrant halt*              - Stoppt alle laufenden VMs.  
