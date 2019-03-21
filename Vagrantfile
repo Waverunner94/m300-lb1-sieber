@@ -21,6 +21,7 @@ Vagrant.configure("2") do |config|
 				vb.memory = "512"
 			end	
 		db.vm.provision "shell", inline: <<-SHELL
+		
 			#DEBUG ON
 			set -o xtrace
 			sudo apt-get update
@@ -68,7 +69,8 @@ Vagrant.configure("2") do |config|
 			end
 		web.vm.synced_folder ".", "/var/www/html"	
 		web.vm.provision "shell", inline: <<-SHELL
-	    # Debug ON!!!
+			
+		# Debug ON!!!
 			set -o xtrace	
 			sudo apt-get update
 			sudo apt-get -y install ufw
