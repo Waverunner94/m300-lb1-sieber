@@ -23,20 +23,23 @@ Vagrant.configure("2") do |config|
 		db.vm.provision "shell", inline: <<-SHELL
 			#DEBUG ON
 			set -o xtrace
-        
+			sudo apt-get update
+			sudo apt-get -y install debconf-utils 
 			# root Password setzen, damit kein Dialog erscheint und die Installation haengt!
 			sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password admin'
 			sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password admin'
 			
 			# Installation
-			sudo apt-get update
+			
 			sudo apt-get -y install ufw
+
+			#FIREWALL
 			#SSH port 22 für host Ip erlauben
 			#sudo ufw allow from 10.71.10.xxx to any port 22
 			#Port 3306 für MySQL für den Webserver öffnen
 			sudo ufw allow from 192.168.69.51 to any port 3306
 			#mysql-server installieren
-			sudo apt-get install -y mysql-server
+			sudo apt-get install -y mysql-server mysql-client
 			
 			# MySQL Port oeffnen
 			sudo sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/mysql.conf.d/mysqld.cnf
