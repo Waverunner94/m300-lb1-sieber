@@ -144,7 +144,7 @@ ProxyPassReverse "/proxy" "http://192.168.69.50"
    end
   end
   ```
-2. Das File db.sh im Verzeichnis erzeugen und folgenden Inhalt einfügen:
+2. Das File db.sh, in dem bereits die User, Datenbanken und definierten Tabellen erstellt werden, im Verzeichnis erzeugen und folgenden Inhalt einfügen:
   ```
   #!/bin/bash
 #
