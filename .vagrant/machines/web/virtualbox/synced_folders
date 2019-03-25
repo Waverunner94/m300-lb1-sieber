@@ -1,0 +1,1 @@
+{"virtualbox":{"/var/www/html":{"guestpath":"/var/www/html","hostpath":"C:/Users/Severin Sieber/Desktop/m300-lb1-sieber/src","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/Severin Sieber/Desktop/m300-lb1-sieber","disabled":false,"__vagrantfile":true}}}
