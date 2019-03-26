@@ -178,7 +178,7 @@ $conn->close();
    end
   end
   ```
-2. Das File db.sh, in dem bereits die User, Datenbanken und definierten Tabellen erstellt werden, im Verzeichnis erzeugen und folgenden Inhalt einfügen:
+2. Das File db.sh, in dem die User, Datenbanken und definierten Tabellen erstellt werden, im Verzeichnis erzeugen und folgenden Inhalt einfügen:
   ```
   #!/bin/bash
 #
