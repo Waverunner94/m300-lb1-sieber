@@ -105,7 +105,7 @@ a2enmod proxy
 a2enmod proxy_http
 service apache2 restart
 ```
-3. Den Ordner "proxy" im Verzeichnis erzeugen und darin das File 001-mysite.conf erzeugen. In diesem File werden die IPs definiert welche über den Proxy erreicht werden können (192.168.69.49/proxy):
+3. Den Ordner "proxy" im Verzeichnis erzeugen und darin das File 001-mysite.conf erzeugen. In diesem File werden die IPs definiert welche über den Proxy erreicht werden können (*192.168.69.49/proxy*):  
 ```
 ProxyPass "/proxy" "http://192.168.69.50/index.php"
 ProxyPassReverse "/proxy" "http://192.168.69.50/index.php"
