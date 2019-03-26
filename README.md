@@ -2,16 +2,16 @@
 
 ## Inhaltsverzeichnis
 - [Modul 300 – LB1](#modul-300-%E2%80%93-lb1)
-  - [Inhaltsverzeichnis](#inhaltsverzeichnis)
-  - [01 - Verwendete Tools](#01---verwendete-tools)
-  - [02 - Wissenstand](#02---wissenstand)
-    - [02.1 - Linux](#021---linux)
-    - [02.2 - Virtualisierung](#022---virtualisierung)
-    - [02.3 - Vagrant](#023---vagrant)
-    - [02.4 - Versionsverwaltung](#024---versionsverwaltung)
-    - [02.5 Mark Down](#025-mark-down)
-    - [02.6 Systemsicherheit](#026-systemsicherheit)
-  - [03 Lernschritte und Durchführung LB1](#03-lernschritte-und-durchf%C3%BChrung-lb1)
+	- [Inhaltsverzeichnis](#inhaltsverzeichnis)
+	- [01 - Verwendete Tools](#01---verwendete-tools)
+	- [02 - Wissenstand](#02---wissenstand)
+		- [02.1 - Linux](#021---linux)
+		- [02.2 - Virtualisierung](#022---virtualisierung)
+		- [02.3 - Vagrant](#023---vagrant)
+		- [02.4 - Versionsverwaltung](#024---versionsverwaltung)
+		- [02.5 Mark Down](#025-mark-down)
+		- [02.6 Systemsicherheit](#026-systemsicherheit)
+	- [03 Lernschritte und Durchführung LB1](#03-lernschritte-und-durchf%C3%BChrung-lb1)
 
 
 ## 01 - Verwendete Tools
@@ -107,8 +107,8 @@ service apache2 restart
 ```
 3. Den Ordner "proxy" im Verzeichnis erzeugen und darin das File 001-mysite.conf erzeugen. In diesem File werden die IPs definiert welche über den Proxy erreicht werden können:
 ```
-ProxyPass "/proxy" "http://192.168.69.50"
-ProxyPassReverse "/proxy" "http://192.168.69.50"
+ProxyPass "/proxy" "http://192.168.69.50/index.php"
+ProxyPassReverse "/proxy" "http://192.168.69.50/index.php"
 ```
 
 **Erzeugen des Webservers im Vagrantfile** 
@@ -128,8 +128,42 @@ ProxyPassReverse "/proxy" "http://192.168.69.50"
   end
 
   ```
-3. Den Ordner "src" im Verzeichnis erstellen. Darin wird die index.html und index.php erzeugt.  
-  
+3. Den Ordner "src" im Verzeichnis erstellen. Darin wird die index.html und index.php erzeugt.
+
+**index.php**  
+1. Das File *index.php* ermöglicht eine automatische Anmeldung des Users *root* mit seinem Kennwort *admin* und stellt eine Verbindung mit der Datenbank *data_set* her. Mittels SQL-Befehl werden alle in der Datenbank vorhandenen Tabellen und Daten ausgegeben. Folgende Zeilen werden dafür in das *index.php* File geschrieben:
+```
+<?php
+$servername = "192.168.69.51";
+$username = "root";
+$password = "admin";
+$dbname = "data_set";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+$sql = "SELECT * FROM data";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        foreach ($row as $key => $value) {
+            echo $key.": ".$value;
+            echo "<br>";
+        }
+        echo "<br>";
+        echo "---------------------------------";
+        echo "<br>";
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+?>
+
+```  
 **Erzeugen des Datenbankservers im Vagrantfile**  
 1. Folgende Zeilen werden in das Vagrantfile unterhalb der letzten geschrieben:
   ```
