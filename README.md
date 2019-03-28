@@ -69,7 +69,7 @@ Die Lernschritte, die ich während der Durchführung von LB1 kontinuierlich aktu
 *vagrant halt*              - Stoppt alle laufenden VMs.  
 *vagrant destroy*           - Löscht alle vorhandenen VMs.  
 
-**Erzeugen des Proxys im Vagrantfile**  
+**Erzeugen des Proxyservers im Vagrantfile**  
 1. Folgende Zeilen werden in das Vagrantfile geschrieben:
 ```
    config.vm.define "proxy" do |proxy|
@@ -220,5 +220,3 @@ mysql -uroot -psecret_password <<%EOF%
 
 sudo service mysql restart
 ```
-
-**Erzeugen des Webservers im Vagrantfile**
